@@ -1,0 +1,9 @@
+em is mesurment relitive to the defualt font size of the container
+
+rem is mesurment relitive to the defualt font size of the whole page
+
+ctrl / to make a coment
+
+id can only be used on one element
+
+DOM = - object modele
