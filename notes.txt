@@ -6,4 +6,4 @@ ctrl / to make a coment
 
 id can only be used on one element
 
-DOM = - object modele
+DOM = - Document object modele
