@@ -5,7 +5,7 @@ body {
     font-family: 'Lora', impact, serif;
     margin: 0;
     padding: 0;
-    font-size: 2em;
+    font-size: 2rem;
 }
 
 aside {
@@ -34,9 +34,11 @@ nav ul {
     list-style: none;
     padding: 0;
     display: flex;
+    flex-direction: row;
     justify-content: right;
     gap: 20px;
     padding-right: 100px;
+
 }
 
 nav ul li {
@@ -63,14 +65,14 @@ article {
 article .book-info {
     margin-bottom: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 33% 33% 33%;
     gap: 20px;
 } 
 
 article .book-meta {
     grid-column: 1/2;
     text-align: right;
-    size: 1em;
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
     border-color: #EFC69B;
     border-width: 0 3px 0 0;
     border-style: solid;
@@ -119,4 +121,17 @@ h1 {
 .skiptocontent:focus-visible {
     top: 10px;
     left: 10px;
+}
+
+.book-meta p {
+    margin: 0;
+    padding: 4px;
+}
+
+.book-meta p:first-child {
+    font-size: 1.2em;
+}
+
+.book-content h2{
+    margin-top: 0;
 }
