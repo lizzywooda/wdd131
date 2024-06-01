@@ -1,4 +1,4 @@
-const articlesContainer = document.getElementById('articles-container');
+let articlesContainer = document.getElementById('articles-container');
 
 articles.forEach(article => {
     const articleElement = document.createElement('article'); 
