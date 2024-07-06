@@ -112,7 +112,7 @@ nav ul {
   align-items: center;
 }
 
-.hide {
+.close {
   display: none;
 }
 
@@ -159,16 +159,16 @@ nav ul {
     grid-template-columns: 1fr 1fr;
   }
 
+  .menu-button {
+    display: none;
+  }
+
   nav ul {
     flex-direction: row;
     justify-content: space-between;
     text-align: center;
     margin-left: 20%;
     margin-right: 20%;
-  }
-
-  .menu-button {
-    display: none;
   }
 }
 
@@ -177,14 +177,4 @@ nav ul {
     grid-template-columns: 1fr 1fr 1fr;
   }
   
-}
-
-@media screen and (max-width: 999px) {
-  nav ul {
-    display: none;
-  }
-
-  nav ul.show {
-    display: flex;
-  }
 }
