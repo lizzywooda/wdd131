@@ -6,7 +6,7 @@
 :root {
   --primary-color: #52489c;
   --secondary-color: #59c3c3;
-  --accent-color: #f45b69;
+  --accent-color: #ebebeb;
   --text-dark: #333;
   --text-light: #ebebeb; 
   --primary-font: Arial, Helvetica, sans-serif;
@@ -158,12 +158,6 @@ nav ul {
   .gallery {
     grid-template-columns: 1fr 1fr;
   }
-}
-
-@media screen and (min-width: 1000px) {
-  .gallery {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 
   nav ul {
     flex-direction: row;
@@ -175,6 +169,12 @@ nav ul {
 
   .menu-button {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr;
   }
   
 }
