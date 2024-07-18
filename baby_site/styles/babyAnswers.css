@@ -1,3 +1,65 @@
-body{
-    font-size: 20px;
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive typography */
+h1 {
+    font-size: 4vw;
+}
+p {
+    font-size: 1.5vw;
+}
+
+/* Flexbox layout */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header, main, footer {
+    flex: 1 1 100%;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1em;
+}
+
+main {
+    padding: 1em;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    padding: 1em;
+}
+
+.milestone {
+    display: none; /* Hide milestones by default */
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.milestone img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media queries for responsive design */
+@media (min-width: 600px) {
+    header, main, footer {
+        flex: 1 1 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    header, main, footer {
+        flex: 1 1 33.33%;
+    }
 }
