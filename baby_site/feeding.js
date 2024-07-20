@@ -1,35 +1,40 @@
 import { feedings } from "./feedinginfo.js";
+
 document.addEventListener("DOMContentLoaded", function() {
     const feedingContainer = document.getElementById("feedingContainer");
 
-
     feedings.forEach(feeding => {
-        const feedingDiv = document.createElement("div");
-        feedingDiv.classList.add("feeding");
+        const card = document.createElement("div");
+        card.classList.add("feeding-card");
 
-        let feedingHTML = `
-            <h3>${feeding.name}</h3>
+        const cardInner = document.createElement("div");
+        cardInner.classList.add("feeding-card-inner");
+
+        const cardFront = document.createElement("div");
+        cardFront.classList.add("feeding-card-front");
+        cardFront.textContent = feeding.name; // Display the month range on the front
+
+        const cardBack = document.createElement("div");
+        cardBack.classList.add("feeding-card-back");
+
+        cardBack.innerHTML = `
             <p><strong>Breast Milk:</strong> ${feeding.breastMilk}</p>
             <p><strong>Formula:</strong> ${feeding.formula}</p>
+            ${feeding.infantCereal ? `<p><strong>Infant Cereal:</strong> ${feeding.infantCereal}</p>` : ''}
+            ${feeding.fruitsOrVeggies ? `<p><strong>Fruits or Veggies:</strong> ${feeding.fruitsOrVeggies}</p>` : ''}
+            ${feeding.meatsOrBeans ? `<p><strong>Meats or Beans:</strong> ${feeding.meatsOrBeans}</p>` : ''}
+            ${feeding.dairy ? `<p><strong>Dairy:</strong> ${feeding.dairy}</p>` : ''}
+            <p><strong>How Often:</strong> ${feeding.howOften.replace(/\n/g, "<br>")}</p>
         `;
 
-        if (feeding.infantCereal) {
-            feedingHTML += `<p><strong>Infant Cereal:</strong> ${feeding.infantCereal}</p>`;
-        }
-        if (feeding.fruitsOrVeggies) {
-            feedingHTML += `<p><strong>Fruits or Veggies:</strong> ${feeding.fruitsOrVeggies}</p>`;
-        }
-        if (feeding.meatsOrBeans) {
-            feedingHTML += `<p><strong>Meats or Beans:</strong> ${feeding.meatsOrBeans}</p>`;
-        }
-        if (feeding.dairy) {
-            feedingHTML += `<p><strong>Dairy:</strong> ${feeding.dairy}</p>`;
-        }
+        cardInner.appendChild(cardFront);
+        cardInner.appendChild(cardBack);
+        card.appendChild(cardInner);
+        feedingContainer.appendChild(card);
 
-        feedingHTML += `<p><strong>How Often:</strong> ${feeding.howOften.replace(/\n/g, "<br>")}</p>`;
-
-        feedingDiv.innerHTML = feedingHTML;
-        feedingContainer.appendChild(feedingDiv);
+        // Add click event listener to toggle flip effect
+        card.addEventListener("click", function() {
+            cardInner.classList.toggle("flipped");
+        });
     });
-
 });
