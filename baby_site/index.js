@@ -1,5 +1,6 @@
 import { milestones } from "./babyAnswers.js";
 
+
 document.addEventListener("DOMContentLoaded", function() {
     const milestoneContainer = document.getElementById("milestoneContainer");
 
@@ -18,8 +19,13 @@ document.addEventListener("DOMContentLoaded", function() {
             <p>${physicalText}</p>
             <p>${cognitiveText}</p>
             <p>${socialText}</p>
-            <img src="${milestone.img}" alt="milestone image">
         `;
+        
+        // Conditionally add the image if it exists
+         if (milestone.img) {
+            milestoneDiv.innerHTML += `<img src="${milestone.img}" alt="milestone image">`;
+        }
+
         milestoneContainer.appendChild(milestoneDiv);
 
         // Hide each milestone initially
@@ -41,4 +47,5 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById(`milestone${index}`).style.display = "block";
         });
     });
+
 });

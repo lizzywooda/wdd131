@@ -1,65 +1,271 @@
+:root {
+  /* change the values below to your colors from your palette (https://coolors.co/15c8ff-f58fa7-adb993-c3c8ce) */
+  --primary-color: #15c8ff;
+  --secondary-color: #f58fa7;
+  --accent1-color: #adb993;
+  --accent2-color: #c3c8ce;
+
+  /* change the values below to your chosen font(s) */
+  --heading-font: "Salsa";
+  --paragraph-font: Roboto, Helvetica, sans-serif;
+
+  /* these colors below should be chosen from among your palette colors above */
+  --headline-color-on-white: var(--primary-color); /* headlines on a white background */
+  --headline-color-on-color: white; /* headlines on a colored background */
+  --paragraph-color-on-white: var(--primary-color); /* paragraph text on a white background */
+  --paragraph-color-on-color: black; /* paragraph text on a colored background */
+  --paragraph-background-color: var(--primary-color);
+  --nav-link-color: black;
+  --nav-background-color: var(--accent1-color);
+  --nav-hover-link-color: black;
+  --nav-hover-background-color: var(--secondary-color);
+}
+
 /* Base styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Responsive typography */
+main{
+  flex: 1;
+}
+
 h1 {
-    font-size: 4vw;
-}
-p {
-    font-size: 1.5vw;
-}
-
-/* Flexbox layout */
-.container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-header, main, footer {
-    flex: 1 1 100%;
-}
-
-header {
-    background: #333;
-    color: #fff;
-    padding: 1em;
+  font-size: calc(1.5vw + 1rem); /* Example: Responsive font size */
 }
 
 main {
-    padding: 1em;
+  display: grid;
+  grid-template-columns: 25% 75%; /* Adjust the width of the columns as needed */
+  grid-template-rows: 1fr; /* Ensure the content takes the available space */
+  grid-template-areas:
+    "menu milestone_container";
+}
+
+menu {
+  grid-area: menu;
+  background-color: var(--primary-color);
+  align-self: start;
+  padding: 2vw;
+  margin: 0;
+}
+
+menu a{
+  text-decoration: none;
+}
+
+menu li {
+  text-align: center;
+  padding: 10px;
+}
+
+menu .menuTop {
+  font-size: calc(1.5vw + 1rem);
+  font-weight: bold;
+  text-align: center;
+}
+
+menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: calc(1.5vw + .8rem);
+}
+
+nav ul{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  line-height: 3rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  list-style-type: none;
+  background-color: var(--nav-background-color);
+  justify-content: center;
+}
+
+nav a {
+  min-width: 120px;
+  padding: 1em;
+  padding-right: 2rem;
+  text-decoration: none;
+
+}
+
+nav a {
+  color: white;
+}
+
+nav a:link,
+nav a:visited {
+  color: var(--nav-link-color);
+}
+
+menu a:hover {
+  background-color: var(--nav-hover-background-color);
+  color: var(--nav-hover-link-color);
+}
+
+menu a:link,
+menu a:visited {
+  color: var(--nav-link-color);
+}
+
+nav li {
+  padding: 5px;
+}
+
+p {
+  font-size: calc(0.8vw + 1rem); /* Example: Responsive font size */
 }
 
 footer {
-    background: #333;
-    color: #fff;
-    padding: 1em;
+  flex-shrink: 0; /* Prevent the footer from shrinking */
+  background-color: var(--accent1-color);
+  padding: 1rem;
+  text-align: center;
+  max-height: 5rem;
+}
+
+
+
+/* classes */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.logo{
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.logo img{
+  width: 100%;
+  height: 100%;
+}
+
+.hover:hover {
+  background-color: var(--nav-hover-background-color);
+  color: var(--nav-hover-link-color);
 }
 
 .milestone {
-    display: none; /* Hide milestones by default */
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f58fa7;
+  text-align: center;
+}
+
+#milestoneContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .milestone img {
-    max-width: 100%;
-    height: auto;
+  height: auto;
+  max-width: 100%;
 }
 
+/* Feeding page */
+#feedingMain {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically (if needed) */
+  width: 100%; /* Ensure it takes the full width */
+  padding: 20px; /* Optional: add padding to create space around the grid */
+}
+
+#feedingContainer {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  grid-template-columns: 1fr; /* Default: 1 column for small screens */
+  grid-template-rows: repeat(6, auto); /* Default: 6 rows for small screens */
+  width: 100%; /* Ensure it takes the full width of the main section */
+  max-width: 1200px; /* Optional: set a maximum width if needed */
+  box-sizing: border-box; /* Ensure padding and borders are included in the element’s total width and height */
+}
+
+.feeding {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: box-shadow 0.3s ease;
+}
+
+.feeding h3 {
+  margin-top: 0;
+}
+
+.feeding p {
+  margin: 5px 0;
+}
+
+.feeding:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 /* Media queries for responsive design */
 @media (min-width: 600px) {
-    header, main, footer {
-        flex: 1 1 50%;
-    }
+
+  nav ul{
+    flex-direction: row;
+  }
+
+  nav{
+    justify-content: left;
+  }
 }
 
 @media (min-width: 992px) {
-    header, main, footer {
-        flex: 1 1 33.33%;
-    }
+
+}
+
+/* Media query for adjusting font sizes on smaller screens */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 16px; /* Example: Adjust font size for smaller screens */
+  }
+  p {
+    font-size: 14px; /* Example: Adjust font size for smaller screens */
+  }
+}
+
+@media (min-width: 601px) { /* Adjust the min-width as needed for medium screens */
+  #feedingContainer {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(3, auto); /* 3 rows */
+  }
+}
+
+/* Media query for large screens */
+@media (min-width: 992px) { /* Adjust the min-width as needed for large screens */
+  #feedingContainer {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, auto); /* 2 rows */
+  }
 }
