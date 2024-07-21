@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", function() {
         milestoneDiv.setAttribute("id", `milestone${index}`); // Add an ID for each milestone
 
         // Replace '\n' with '<br>' in each category
-        const physicalText = milestone.physical.replace(/\n/g, "<br>");
-        const cognitiveText = milestone.cognitive.replace(/\n/g, "<br>");
-        const socialText = milestone.social.replace(/\n/g, "<br>");
+        const physicalText = milestone.physical ? milestone.physical.replace(/\n/g, "<br>") : '';
+        const cognitiveText = milestone.cognitive ? milestone.cognitive.replace(/\n/g, "<br>") : '';
+        const socialText = milestone.social ? milestone.social.replace(/\n/g, "<br>") : '';
 
         milestoneDiv.innerHTML = `
             <h3>${milestone.name}</h3>

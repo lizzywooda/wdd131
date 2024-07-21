@@ -2,8 +2,6 @@ const milestones = [
     {
         name: "Introduction",
         physical: "To veiw the different milestones for a given month select a month from the left.",
-        cognitive:"",
-        social:"",
         img: "styles/growing_baby.jpeg"
     },
     {
