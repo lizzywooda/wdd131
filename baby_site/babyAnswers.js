@@ -1,5 +1,12 @@
 const milestones = [
     {
+        name: "Introduction",
+        physical: "To veiw the different milestones for a given month select a month from the left.",
+        cognitive:"",
+        social:"",
+        img: "styles/growing_baby.jpeg"
+    },
+    {
         name: "0 Month",
         physical: "Makes jerky, quivering arm movements.\nBrings hands near face.\nKeeps hands in tight fists.\nMoves head from side to side while on tummy.",
         cognitive: "Focuses on objects 8-12 inches away.\nPrefers human faces to other shapes.\nBegins to follow objects with eyes.",

@@ -178,6 +178,10 @@ footer {
   text-align: center;
 }
 
+.milestone h3{
+  font-size: calc(1.5vw + 1rem);
+}
+
 #milestoneContainer {
   display: flex;
   flex-wrap: wrap;

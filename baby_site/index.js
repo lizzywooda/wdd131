@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
         milestoneContainer.appendChild(milestoneDiv);
 
         // Hide each milestone initially
-        milestoneDiv.style.display = "none";
+        milestoneDiv.style.display = index === 0 ? "block" : "none";
     });
 
     // Add event listeners to each list item in the navigation
